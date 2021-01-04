@@ -35,5 +35,3 @@ while nodesRemaining > 1:
     i += 2
     nodesRemaining = len(inputList)-i
 
-print('Hi GIT!')
-
