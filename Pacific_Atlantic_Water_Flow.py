@@ -4,6 +4,9 @@ class Solution:
         m = len(arr)
         n = len(arr[0])
         
+        if arr[1][3] > arr[1][4]:
+            print('Wrong')
+        
         coordL = []
         i = 0
         j = 0
@@ -15,13 +18,15 @@ class Solution:
                 # Check westward flow
                 j2 = 0
                 while j2 < j:
+                    if i==1 and j==4:
+                        print(j2)
                     if arr[i][j2] > arr[i][j2+1]:
                         break
                     j2 += 1
+                if i==1 and j==4:
+                    print(j2)
                 if j2==j:
                     pacFlag = 1
-                if i==1 and j==4:
-                    print
 
                 # Check northward flow if there is no westward flow
                 if pacFlag==0:
@@ -37,8 +42,6 @@ class Solution:
                 if pacFlag==1:
                     # Check eastward flow
                     j2 = n-1
-                    if i==1 and j==4:
-                        print(j2)
                     while j2 > j:
                         if arr[i][j2] > arr[i][j2-1]:
                             break
