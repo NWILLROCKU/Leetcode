@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# This uses the "Expand around center" method
+>>>>>>> a80a1466e6773868e1eb4096f8d4df61ce747541
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         longestPal = s[0]
@@ -16,11 +20,23 @@ class Solution:
                 evenCtr.pop(0)
             if evenCtr != [] and evenCtr[-1] + evenRad > n-1:
                 evenCtr.pop()
+<<<<<<< HEAD
             for i in range(len(evenCtr)):
                 if s[evenCtr[i]-evenRad]==s[evenCtr[i]+evenRad]:
                     if updatedLongest==False:
                         longestPal = s[evenCtr[i]-evenRad : evenCtr[i]+evenRad+1]
                         updatedLongest = True
+=======
+            i = 0
+            while i < len(evenCtr):
+                even1 = int(evenCtr[i]-evenRad)
+                even2 = int(evenCtr[i]+evenRad)
+                if s[even1]==s[even2]:
+                    if updatedLongest==False:
+                        longestPal = s[even1:even2+1]
+                        updatedLongest = True
+                    i += 1
+>>>>>>> a80a1466e6773868e1eb4096f8d4df61ce747541
                 else:
                     evenCtr.pop(i)
             
@@ -29,11 +45,20 @@ class Solution:
                 oddCtr.pop(0)
             if oddCtr != [] and oddCtr[-1] + oddRad > n-1:
                 oddCtr.pop()
+<<<<<<< HEAD
             for i in range(len(oddCtr)):
+=======
+            i = 0
+            while i < len(oddCtr):
+>>>>>>> a80a1466e6773868e1eb4096f8d4df61ce747541
                 if s[oddCtr[i]-oddRad]==s[oddCtr[i]+oddRad]:
                     if updatedLongest==False:
                         longestPal = s[oddCtr[i]-oddRad : oddCtr[i]+oddRad+1]
                         updatedLongest = True
+<<<<<<< HEAD
+=======
+                    i += 1
+>>>>>>> a80a1466e6773868e1eb4096f8d4df61ce747541
                 else:
                     oddCtr.pop(i)
 
